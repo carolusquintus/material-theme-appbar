@@ -1,0 +1,10 @@
+#!/bin/bash
+
+FILES=./assets/purple/*
+
+for f in $FILES
+do
+    output_file=$(echo $f | sed s/purple/grey/g)
+    echo $output_file
+    gm convert $f -depth 8 -modulate 50,6,220 $output_file
+done
